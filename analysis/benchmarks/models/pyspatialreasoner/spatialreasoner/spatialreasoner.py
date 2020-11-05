@@ -93,6 +93,7 @@ class SpatialReasoner():
         lisp_dir = os.path.abspath(os.path.split(os.path.abspath(__file__))[0] + '/lisp')
         lisp_path = os.path.abspath(lisp_dir + '/spatial.lisp')
         fasl_path = os.path.abspath(lisp_dir + '/spatial.{}'.format(cclmod.FSL_ENDINGS[self.ccl.system]))
+        fasl_path = fasl_path.replace('\\', '\\\\')
 
         if not os.path.isfile(fasl_path):
             self.logger.debug('compiling the lisp code...')

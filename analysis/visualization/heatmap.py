@@ -1,3 +1,7 @@
+""" Plots a heatmap indicating the proportion of joint optimality between models.
+
+"""
+
 import pandas as pd
 import numpy as np
 import matplotlib as mpl
@@ -73,7 +77,6 @@ ax_cbar = fig.add_axes([.9, 0.4, .02, .475])
 
 sns.heatmap(nh_4ps, lw=1, cmap='Blues', annot=True, vmin=0, vmax=1, cbar=False, ax=axs[0])
 sns.heatmap(nh_smalllarge, lw=1, cmap='Blues', annot=True, vmin=0, vmax=1, cbar=True, ax=axs[1], cbar_ax=ax_cbar)
-# mpl.colorbar.ColorbarBase(axs[2], cmap='Blues', norm=mpl.colors.Normalize(vmin=0, vmax=1), orientation='horizontal')
 
 axs[0].set_xticks(np.arange(len(model_list)) + 0.5)
 axs[0].set_xticklabels(model_list, rotation=90)
@@ -85,5 +88,5 @@ axs[0].set_yticklabels(model_list, rotation=0)
 axs[1].set_yticklabels([])
 
 plt.tight_layout(rect=[0, 0, 0.9, 1])
-plt.savefig('heatmap.pdf')
+plt.savefig('results/heatmap.pdf')
 plt.show()

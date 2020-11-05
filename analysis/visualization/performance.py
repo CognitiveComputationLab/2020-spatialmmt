@@ -1,3 +1,7 @@
+""" Plots the model performances as boxplots.
+
+"""
+
 import sys
 import os
 
@@ -8,6 +12,7 @@ from matplotlib.lines import Line2D
 import seaborn as sns
 
 
+# Parse command line arguments
 if len(sys.argv) < 2:
     print('usage: python performance.py <ccobra-csv> [out-file]')
     exit(99)
@@ -121,5 +126,5 @@ plt.legend(
 )
 
 plt.tight_layout()
-plt.savefig(out_file)
+plt.savefig('results/' + out_file)
 plt.show()
