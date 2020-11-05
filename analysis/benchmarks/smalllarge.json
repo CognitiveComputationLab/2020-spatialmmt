@@ -1,0 +1,17 @@
+{
+    "type": "coverage",
+    "data.test": "data/Ragni2018_smalllarge.csv",
+    "data.pre_train": "data/Ragni2018_smalllarge.csv",
+    "corresponding_data": true,
+    "models": [
+        "models/Baseline/MFA-Model/mfa_smalllarge.py",
+        "models/Baseline/Random-Model",
+        "models/Baseline/Transitive-Closure",
+        "models/other/prism/Prism/prismmodel.py",
+        "models/other/verbal/verbal.py",
+        {"filename": "models/pyspatialreasoner/ccobra_spatialreasoner.py", "override_name": "SpatialReasoner-adapted", "args": {"decide_method": "adapted"}},
+        {"filename": "models/pyspatialreasoner/ccobra_spatialreasoner.py", "override_name": "SpatialReasoner-credulous", "args": {"decide_method": "credulous"}},
+        {"filename": "models/pyspatialreasoner/ccobra_spatialreasoner.py", "override_name": "SpatialReasoner-initial", "args": {"decide_method": "initial"}},
+        {"filename": "models/pyspatialreasoner/ccobra_spatialreasoner.py", "override_name": "SpatialReasoner-skeptical", "args": {"decide_method": "skeptical"}}
+    ]
+}
