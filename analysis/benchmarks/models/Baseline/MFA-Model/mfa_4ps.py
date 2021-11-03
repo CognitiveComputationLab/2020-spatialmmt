@@ -25,7 +25,7 @@ RESPONSE_LIST_4PS = [
 
 class MFA(ccobra.CCobraModel):
     def __init__(self, name='MFA'):
-        super(MFA, self).__init__(name, ['spatial-relational'], ['verify'])
+        super(MFA, self).__init__(name, ['spatial-relational'], ['verify', 'accept'])
 
         self.mfa = np.zeros((len(TASK_LIST_4PS) * len(RESPONSE_LIST_4PS),))
 

@@ -43,7 +43,7 @@ def get_plh_task(task, plh):
 
 class MFA(ccobra.CCobraModel):
     def __init__(self, name='MFA'):
-        super(MFA, self).__init__(name, ['spatial-relational'], ['verify'])
+        super(MFA, self).__init__(name, ['spatial-relational'], ['verify', 'accept'])
 
         # Task structure
         self.task_list = [

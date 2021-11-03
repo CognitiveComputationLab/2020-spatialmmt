@@ -66,7 +66,7 @@ class Relational():
 
 class MFA(ccobra.CCobraModel):
     def __init__(self, name='MFA'):
-        super(MFA, self).__init__(name, ['spatial-relational'], ['verify'])
+        super(MFA, self).__init__(name, ['spatial-relational'], ['verify', 'accept'])
 
         # Define supported tasks and relations
         self.supp_relas = ['left', 'right']

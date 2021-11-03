@@ -7,7 +7,7 @@ import spatialreasoner as sr
 class SpatialReasoner(ccobra.CCobraModel):
     def __init__(self, name='SpatialReasoner', decide_method='adapted'):
         super(SpatialReasoner, self).__init__(
-            name, ['spatial-relational'], ['verify', 'single-choice'])
+            name, ['spatial-relational'], ['verify', "accept", 'single-choice'])
 
         # Determine decide method
         if decide_method not in ['skeptical', 'credulous', 'initial', 'adapted']:
@@ -92,7 +92,10 @@ class SpatialReasoner(ccobra.CCobraModel):
         return norm_problem
 
     def predict(self, item, **kwargs):
-        if item.response_type == 'verify':
+        # the handling of accept-tasks is currently the same as for verification tasks,
+        # as the general approach relies on adding the conclusion to the premises
+        # and check for consistency problems
+        if item.response_type == 'verify' or item.response_type == 'accept':
             norm_problem = self.normalize_task(item.task, item.choices[0])
             sub_predictions = self.model.query(norm_problem)
             self.last_responses = (item.choices[0], sub_predictions)

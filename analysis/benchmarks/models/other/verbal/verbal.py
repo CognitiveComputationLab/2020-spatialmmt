@@ -529,7 +529,7 @@ class VerbalModel(ccobra.CCobraModel):
 
         """
         super(VerbalModel, self).__init__(
-            name, ["spatial-relational"], ["verify", "single-choice"])
+            name, ["spatial-relational"], ["verify", "accept", "single-choice"])
 
         self.preferences = {"north": 0, "south": 0,"east": 0,"west": 0,
                             "left": 0, "right": 0, "north-reverse": 0,

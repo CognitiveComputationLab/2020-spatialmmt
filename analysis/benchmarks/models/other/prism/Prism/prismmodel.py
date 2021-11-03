@@ -70,7 +70,7 @@ class PrismModel(ccobra.CCobraModel):
         """
 
         super(PrismModel, self).__init__(
-            name, ["spatial-relational"], ["verify", "single-choice", "model_constr"])
+            name, ["spatial-relational"], ["verify", "accept", "single-choice", "model_constr"])
 
         self.prism = Prism(True)
         self.last_prediction = None
